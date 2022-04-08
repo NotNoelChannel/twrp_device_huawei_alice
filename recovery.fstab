@@ -1,0 +1,12 @@
+/3rdmodem         emmc       /dev/block/platform/hi_mci.0/by-name/3rdmodem		flags=display="3rdmodem";backup=1
+/cache            ext4       /dev/block/platform/hi_mci.0/by-name/cache			flags=display="Cache";backup=1;wipeingui
+/data             ext4       /dev/block/platform/hi_mci.0/by-name/userdata		length=-16384
+/cust             ext4       /dev/block/platform/hi_mci.0/by-name/cust			flags=display="Custom";backup=1;wipeingui
+/oeminfo          emmc       /dev/block/platform/hi_mci.0/by-name/oeminfo		flags=display="OEMinfo";backup=1;flashimg=1
+/boot             emmc       /dev/block/platform/hi_mci.0/by-name/boot			
+/misc             emmc       /dev/block/platform/hi_mci.0/by-name/misc			flags=display="Misc";backup=0
+/recovery         emmc       /dev/block/platform/hi_mci.0/by-name/recovery		flags=display="Recovery";backup=1
+/system           ext4       /dev/block/platform/hi_mci.0/by-name/system
+/external_sd	  vfat       /dev/block/mmcblk1p1 /dev/block/mmcblk1			flags=storage;wipeingui;removable
+
+
