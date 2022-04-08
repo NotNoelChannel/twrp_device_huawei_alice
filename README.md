@@ -1,5 +1,3 @@
-@Copyright 2017 - The LineageOS Project
-
 Huawei P8Lite detailed specifications:
 ======================================
 
