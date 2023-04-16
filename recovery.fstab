@@ -1,12 +1,21 @@
-/3rdmodem         emmc       /dev/block/platform/hi_mci.0/by-name/3rdmodem		flags=display="3rdmodem";backup=1
-/cache            ext4       /dev/block/platform/hi_mci.0/by-name/cache			flags=display="Cache";backup=1;wipeingui
-/data             ext4       /dev/block/platform/hi_mci.0/by-name/userdata		length=-16384
-/cust             ext4       /dev/block/platform/hi_mci.0/by-name/cust			flags=display="Custom";backup=1;wipeingui
-/oeminfo          emmc       /dev/block/platform/hi_mci.0/by-name/oeminfo		flags=display="OEMinfo";backup=1;flashimg=1
-/boot             emmc       /dev/block/platform/hi_mci.0/by-name/boot			
-/misc             emmc       /dev/block/platform/hi_mci.0/by-name/misc			flags=display="Misc";backup=0
-/recovery         emmc       /dev/block/platform/hi_mci.0/by-name/recovery		flags=display="Recovery";backup=1
-/system           ext4       /dev/block/platform/hi_mci.0/by-name/system
-/external_sd	  vfat       /dev/block/mmcblk1p1 /dev/block/mmcblk1			flags=storage;wipeingui;removable
+/3rdmodem     emmc		/dev/block/mmcblk0p33                             flags=display="3rdmodem";backup=1
+/boot         emmc		/dev/block/mmcblk0p27                                 flags=display="Boot";backup=1
+/recovery     emmc              /dev/block/mmcblk0p28                             flags=display="Recovery";backup=1
+/recovery2    emmc              /dev/block/mmcblk0p21                            flags=display="Recovery2";backup=1;flashimg=1
+/cache        ext4		/dev/block/mmcblk0p34                                flags=display="Cache";wipeingui
+/cust         ext4              /dev/block/mmcblk0p39                                 flags=display="Cust";backup=1;wipeingui
+/misc         emmc		/dev/block/mmcblk0p19	                           flags=display="Misc";backup=1
+/oeminfo      emmc              /dev/block/mmcblk0p8                              flags=display="OEMinfo";backup=1;flashimg=1
+/data         ext4		/dev/block/mmcblk0p40                             flags=display="Data";storage;backup=1;wipeingui;encryptable=footer;length=-16384
+/system       ext4		/dev/block/mmcblk0p38                               flags=display="System";backup=1;wipeingui
 
+/sdcard1        auto		    /dev/block/mmcblk1p1	                        /dev/block/mmcblk1	      flags=display="MicroSDCard";storage;wipeingui;removable;backup=0
+#/2Part_MicroSDCard  auto		    /dev/block/mmcblk1p2	                        /dev/block/mmcblk2	      flags=display="2PartMicroSDCard";storage;wipeingui;removable;backup=0
 
+/sec_storage   auto     /dev/block/mmcblk0p13                                                     flags=display="Sec_Storage";wipeingui;backup=0
+/log           auto     /dev/block/mmcblk0p18                                                     flags=display="log";wipeingui;backup=0
+#/mnvm1         auto     /dev/block/mmcblk0p10                                                     flags=backup=0
+#/mnvm2         auto     /dev/block/mmcblk0p11                                                     flags=backup=0
+#/mnvm3         auto     /dev/block/mmcblk0p12                                                     flags=backup=0
+
+#/usb-otg       auto		    /dev/block/sda1                             /dev/block/sda            flags=display="USB-Storage";storage;wipeingui;removable;backup=0

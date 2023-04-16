@@ -15,22 +15,24 @@
 
 LOCAL_PATH := device/huawei/alice
 
-# Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
+
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a15
+
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HIGH_OPTIMIZATION := true
 TARGET_USES_64_BIT_BINDER := true
+
 TARGET_BOARD_PLATFORM := hi6210sft
 BOARD_VENDOR_PLATFORM := hi6210sft
 
@@ -45,7 +47,7 @@ BOARD_KERNEL_BASE := 0x07478000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 coherent_pool=512K no_irq_affinity ate_enable=true androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 --tags_offset 0x02988000
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
 
 # Partitions
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -57,7 +59,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11605639168
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # TWRP
-RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 
 RECOVERY_SDCARD_ON_DATA := true
@@ -73,3 +74,6 @@ RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
 BACKLIGHT_PATH := /sys/class/leds/lcd_backlight0/brightness
 TW_BRIGHTNESS_PATH := $(BACKLIGHT_PATH)
 TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/Battery
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_FUSE_EXFAT := true
+TW_INCLUDE_FUSE_NTFS := true
